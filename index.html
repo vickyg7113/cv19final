@@ -1,0 +1,431 @@
+<html>
+ <head> 
+  <!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">--> 
+  <style>
+    body{
+  margin:0;
+  padding:0;
+}
+section
+{
+  display:flex;
+  flex-wrap:wrap;
+  width:100%;
+  height:700px;
+  background:linear-gradient(45deg,#f0027f,#75489f);
+  border-radius:0 0 100% 100%;
+}
+.h{
+  display:flex;
+  flex-wrap:wrap;
+  margin-left:40px;
+  justify-content:space-around;
+  padding-top:90px;
+}
+.corona{
+  display:flex;
+  flex-wrap:wrap;
+  width:450px;
+  height:500px;
+  border-radius:50%;
+}
+nav{
+  margin:30px;
+}
+#piechart{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+.n
+{
+  margin-left:50px;
+  font-size:180%;
+  text-decoration:none;
+  color:black;
+  box-shadow:2px 2px 2px 3px grey;
+  border-radius:10px;
+}
+.txt{
+  display:flex;
+  flex-wrap:wrap;
+  font-size:700%;
+  text-align:center;
+  color:#3c1053ff;
+}
+h1{
+  box-shadow:0px 0px 0px 3px grey;
+  width:200px;
+  margin:20px;
+  font-size:300%;
+  border-radius:3px;
+  text-align:center;
+}
+.card{
+  display:flex;
+  flex-wrap:wrap;
+}
+.time{
+  margin:20px;
+}
+.details{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  width:100%;
+}
+.totalC{
+  font-size:150%;
+  width:75%;
+  border:2px solid grey;
+  background-color:white;
+  border-radius:5px;
+  line-height:50px;
+  margin:20px;
+  height:50px;
+  transition:1s;
+}
+.totalC:hover
+{
+ box-shadow:2px 2px 0px 3px grey;
+}
+.sh
+{
+  font-weight:bold;
+  border:2px solid black;
+  border-radius:5px;
+  background-color:white;
+  box-shadow:2px 2px 2px 1px grey;
+  font-size:200%;
+  width:340px;
+  margin:20px;
+}
+#blink{
+color:red;
+margin:20px;
+}
+#state{
+ font-size:180%;
+ box-shadow:2px 2px 2px 2px grey;
+ border-radius:10px;
+ width:450px;
+ display:block;
+ height:50px;
+ margin-left:auto;
+ margin-right:auto;
+ margin-top:30px;
+}
+.sec{
+  
+}
+.btn
+{
+ font-size:150%;
+ box-shadow:2px 2px 2px 2px grey;
+ border-radius:10px;
+ display:inline;
+ margin-left:28%;
+ margin-top:50px;
+}
+.rbtn
+{
+ font-size:150%;
+ box-shadow:2px 2px 2px 2px grey;
+ border-radius:10px;
+ display:inline;
+ margin-left:25%;
+ margin-top:50px;
+ margin-bottom:10px;
+}
+.stateC
+{
+  font-size:150%;
+  margin-left:auto;
+  margin-right:auto;
+  box-shadow:0px 0px 0px 3px grey;
+  border-radius:10px;
+  width:75%;
+  background-color:white;
+  text-align:center;
+}
+.simg{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+}
+.loc{
+  display:flex;
+  flex-wrap:wrap;
+  font-size:150%;
+  justify-content:center;
+  text-align:center;
+}
+.tips
+{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  width:95%;
+  height:700px;
+  border-radius:30px;
+  padding-top:30px;
+}
+#n
+{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+}
+.n1
+{
+  border:2px solid grey;
+  border-radius:10px;
+  width:180px;
+  height:200px;
+  transition:1s;
+  text-align:center;
+  font-size:200%;
+}
+.n1:hover{
+  border-radius:10px;
+  box-shadow:2px 2px 0px 3px grey;
+}
+.icon
+{
+  width:100px;
+  height:100px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:40px;
+}
+ footer{
+   font-size:150%;
+   text-align:center;
+   line-height:60px;
+   border:2px solid black;
+   border-radius:50% 50% 0 0;
+   height:60px;
+   margin:10px;
+   background:linear-gradient(45deg,#f0027f,#75489f);
+ }
+ </style> 
+ </head> 
+ <body> 
+  <section> 
+   <div class="h"> 
+    <img class="corona" src="coronavirus.png"> 
+    <p class="txt">Covid-19<br>Tracker</p> 
+   </div> 
+  </section> 
+  <nav id="nav"> 
+   <a class="n">Home</a> 
+   <a class="n" href="https://en.m.wikipedia.org/wiki/COVID-19_pandemic">Detail Information</a> 
+   <a class="n">Help line</a> 
+   <a class="n" href="mailto: vv517816@gmail.com">Contact Us</a> 
+  </nav> 
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+  <form> 
+   <select id="state"></select> 
+  </form> 
+  <blink id="blink"> 
+   <i>Note: If you want to see another state details, please hit To default button. Submit To default.</i> 
+  </blink> 
+  <button id="btn" onclick="sta()">Submit</button> 
+  <button id="rbtn" onclick="remove()">To default</button> 
+  <img id="tips" src="tips.jpeg"> 
+  <div id="n"> 
+   <p class="n1"><a href="https://www.facebook.com/vamshi.gujjuboina"><img class="icon" src="facebook.png"></a>Facebook</p> 
+   <p class="n1"><a href="https://github.com/vickyg7113"><img class="icon" src="github.png"></a>GitHub</p> 
+   <p class="n1"><a href="mailto: vv517816@gmail.com"><img class="icon" src="gmail.png"></a>Gmaill</p> 
+  </div> 
+  <script>
+    
+      fetch('https://api.rootnet.in/covid19-in/stats/latest').then((response)=>
+    {
+      return response.json();
+    }) 
+    .then((datas) =>
+      {
+      // console.log(data);
+   
+   var body =document.body;
+  
+   var h1=document.createElement("h1");
+   h1.textContent="In India";
+   body.append(h1);
+  
+   var card=document.createElement("div");
+   card.classList.add("card");
+   body.append(card);
+   
+   var time=document.createElement("h2");
+   time.textContent="Last updated: "+new Date();
+   time.classList.add("time");
+   card.append(time);
+   
+   var details=document.createElement("div");
+   details.classList.add("details");
+   card.append(details);
+   
+   var totalC=document.createElement("p");
+   totalC.textContent="Total Confirmed: "+datas.data.summary.total;
+  totalC.classList.add("totalC");
+   details.append(totalC);
+   var totalD=document.createElement("p");
+   totalD.textContent="Total Deaths: "+datas.data.summary.deaths;
+  totalD.classList.add("totalC");
+   details.append(totalD);
+   var totalR=document.createElement("p");
+   totalR.textContent="Total Recovered: "+datas.data.summary.discharged;
+  totalR.classList.add("totalC");
+   details.append(totalR);
+   var cI=document.createElement("p");
+   cI.textContent="Confirmed Indian Cases: "+datas.data.summary.confirmedCasesIndian;
+   cI.classList.add("totalC");
+   details.append(cI);
+   var fC=document.createElement("p");
+   fC.textContent="Confirmed Foreign Cases: "+datas.data.summary.confirmedCasesForeign;
+   fC.classList.add("totalC");
+   details.append(fC);
+ 
+   var pie=document.createElement("div");
+   pie.setAttribute("id","piechart");
+   details.append(pie);
+   
+   google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Cases', 'Per Day'],
+  ['Total Confirmed',datas.data.summary.total],
+  ['Total Deaths',datas.data.summary.deaths],
+  ['Total Recovered',datas.data.summary.discharged],
+  ['CIC',datas.data.summary.confirmedCasesIndian],
+  ['CFC',datas.data.summary.confirmedCasesForeign]
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'Corona Cases', 'width':900, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+ 
+}
+   
+   var state=document.createElement("div");
+   state.classList.add("state1");
+   body.append(state);
+   
+   var sh=document.createElement("p");
+   sh.textContent="For State Wise Details: ";
+   sh.classList.add("sh");
+   state.append(sh);
+   
+   var blink=document.getElementById("blink");
+   state.append(blink);
+  
+   sec=document.createElement("div");
+   sec.classList.add("sec");
+   state.append(sec);
+   
+   (function() {
+        drop = document.getElementById('state');
+        df = document.createDocumentFragment();
+    for (var j = 0; j<datas.data.regional.length; j++) {
+        var option = document.createElement('option');
+        option.value =datas.data.regional[j].loc;
+        option.appendChild(document.createTextNode(option.value));
+        df.appendChild(option);
+    }
+    drop.appendChild(df);
+   }());
+   sec.append(drop);
+   
+   btn=document.getElementById("btn");
+   btn.classList.add("btn");
+   sec.append(btn);
+   
+   rbtn=document.getElementById("rbtn");
+   rbtn.classList.add("rbtn");
+   sec.append(rbtn);
+   
+   stateC=document.createElement("div");
+   stateC.classList.add("stateC");
+   sec.append(stateC);
+   
+   simg=document.createElement("div");
+   simg.classList.add("simg");
+   stateC.append(simg);
+  
+   var tips=document.getElementById("tips");
+   tips.classList.add("tips");
+   body.append(tips);
+  
+   var n1=document.getElementById("n");
+   body.append(n1);
+   
+   var footer = document.createElement("footer"); 
+  footer.textContent="All copy rights reserved";
+  body.append(footer);
+  });
+  
+  function sta(){
+    fetch('https://api.rootnet.in/covid19-in/stats/latest').then((sresponse)=>
+    {
+      return sresponse.json();
+    }) 
+    .then((sdata) =>
+      {
+   //  console.log(sdata);
+      var result=drop.options[drop.selectedIndex].value;
+     
+     for(var i=0;i<sdata.data.regional.length;i++)
+      {
+       res=sdata.data.regional[i].loc;
+      if(result==res)
+      {
+      loc=document.createElement("p");
+      loc.innerHTML+="State: "+sdata.data.regional[i].loc;
+      loc.classList.add("loc");
+      stateC.append(loc);
+      
+      stC=document.createElement("p");
+      stC.innerHTML+="Total Confirmed: "+sdata.data.regional[i].totalConfirmed;
+      stC.classList.add("loc");
+      stateC.append(stC);
+      
+      stD=document.createElement("p");
+      stD.innerHTML+="Total Deaths: "+sdata.data.regional[i].deaths;
+      stD.classList.add("loc");
+      stateC.append(stD);
+      
+      stR=document.createElement("p");
+      stR.innerHTML+="Recovered: "+sdata.data.regional[i].discharged;
+      stR.classList.add("loc");
+      stateC.append(stR);
+      
+      sImg=document.createElement("img");
+      sImg.setAttribute("src","state"+i+".jpeg");
+      sImg.setAttribute("width","200px;");
+      sImg.setAttribute("height","200px");
+      sImg.setAttribute("alt",sdata.data.regional[i].loc);
+      simg.append(sImg);
+       }
+     }
+   });
+   }
+  function remove()
+  {
+    stateC.removeChild(loc);
+    stateC.removeChild(stC);
+    stateC.removeChild(stD);
+    stateC.removeChild(stR);
+    simg.removeChild(sImg);
+  }
+  </script> 
+ </body>
+</html>
